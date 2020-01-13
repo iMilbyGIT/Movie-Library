@@ -16,10 +16,13 @@ namespace WebAPISample.Controllers
         public IHttpActionResult Get() // Retrieve all movies from db logic
         {
             List<Movie> movies = new List<Movie>();
-            foreach (var movie in db.Movies)
+
+            foreach(var movie in db.Movies)
             {
                 movies.Add(movie);
             }
+            
+
             return Ok(movies);
         }
 
@@ -32,15 +35,14 @@ namespace WebAPISample.Controllers
         }
 
         // POST api/values
-        public IHttpActionResult Post([FromBody]Movie movie) // Create movie in db logic
-        {  
-            //if (ModelState.IsValid)
-            //{
-            //    db.Movies.Add(movie);
-            //    db.SaveChanges();
-                
-            //}
-            return Ok();
+        public void Post([FromBody]Movie movie) // Create movie in db logic
+        {
+            if (ModelState.IsValid)
+            {
+                db.Movies.Add(movie);
+                db.SaveChanges();
+                Ok();
+            }
         }
 
         // PUT api/values/5
@@ -55,6 +57,7 @@ namespace WebAPISample.Controllers
         {
                 if (id == 0)
                 {
+
                     return BadRequest("Not a valid movie id");
                 }
                 else 
