@@ -14,6 +14,7 @@ namespace WebAPISample.Migrations
 
         protected override void Seed(WebAPISample.Models.ApplicationDbContext context)
         {
+<<<<<<< HEAD
             context.Movies.AddOrUpdate(
                 //new Models.Movie { Title = "The Departed", Genre = "Drama", Director = "Martin Scorsese" },
                 //new Models.Movie { Title = "The Dark Knight", Genre = "Drama", Director = "Christopher Nolan" },
@@ -21,6 +22,15 @@ namespace WebAPISample.Migrations
                 //new Models.Movie { Title = "Pineapple Express", Genre = "Comedy", Director = "David Gordon Green" },
                 //new Models.Movie { Title = "Die Hard", Genre = "Action", Director = "John McTiernan" }
             );
+=======
+            //context.Movies.AddOrUpdate(
+            //    new Models.Movie { Title = "The Departed", Genre = "Drama", Director = "Martin Scorsese" },
+            //    new Models.Movie { Title = "The Dark Knight", Genre = "Drama", Director = "Christopher Nolan" },
+            //    new Models.Movie { Title = "Inception", Genre = "Drama", Director = "Christopher Nolan" },
+            //    new Models.Movie { Title = "Pineapple Express", Genre = "Comedy", Director = "David Gordon Green" },
+            //    new Models.Movie { Title = "Die Hard", Genre = "Action", Director = "John McTiernan" }
+            //);
+>>>>>>> 020da727dbeec005d75cf7b4f9bd6da72bff24bb
         }
     }
 }
