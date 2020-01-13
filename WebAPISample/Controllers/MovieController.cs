@@ -47,33 +47,23 @@ namespace WebAPISample.Controllers
         public IHttpActionResult Put(int id, [FromBody]string value) // Update movie in db logic
         {
 
-
             return Ok();
         }
 
         // DELETE api/values/5
         public IHttpActionResult Delete(int id) // Delete movie from db logic
         {
-            {
-                if (id <= 0)
-                    return BadRequest("Not a valid movie id");
-
-                using (var moviedel = new ApplicationDbContext())
+                if (id == 0)
                 {
-                    var movie = moviedel.Movies
-                        .Where(s => s.MovieId == id)
-                        .FirstOrDefault();
-
-                    moviedel.Entry(movie).State = System.Data.Entity.EntityState.Deleted;
-                    moviedel.SaveChanges();
+                    return BadRequest("Not a valid movie id");
                 }
-
-                return Ok();
-            }
-            //Movie movie = db.Movies.Find(id);
-            //db.Movies.Remove(movie);
-            //db.SaveChanges();
-            //return Ok();
+                else 
+                {
+                    var movie = db.Movies.Where(s => s.MovieId == id).FirstOrDefault();
+                    db.Movies.Remove(movie);
+                    db.SaveChanges();
+                    return Ok();
+                }
         }
     }
 
