@@ -33,13 +33,13 @@ namespace WebAPISample.Controllers
         }
 
         public IHttpActionResult Post([FromBody]Movie movie) // Create movie in db logic
-        {  
-            //if (ModelState.IsValid)
-            //{
-            //    db.Movies.Add(movie);
-            //    db.SaveChanges();
-                
-            //}
+        {
+            if (ModelState.IsValid)
+            {
+                db.Movies.Add(movie);
+                db.SaveChanges();
+
+            }
             return Ok();
         }
 
@@ -54,16 +54,16 @@ namespace WebAPISample.Controllers
         // DELETE api/values/5
         public IHttpActionResult Delete(int id) // Delete movie from db logic
         {
-            if (id == 0)
-            {
-                return BadRequest("Not a valid id");
-            }
-            else
+            try
             {
                 var movie = db.Movies.Where(m => m.MovieId == id).FirstOrDefault();
                 db.Movies.Remove(movie);
                 db.SaveChanges();
                 return Ok();
+            }
+            catch
+            {
+                return BadRequest("Not a valid id");
             }
         }
     }
