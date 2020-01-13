@@ -16,18 +16,11 @@ namespace WebAPISample.Controllers
         public IHttpActionResult Get() // Retrieve all movies from db logic
         {
             List<Movie> movies = new List<Movie>();
-<<<<<<< HEAD
             foreach(var movie in db.Movies)
             {
                 movies.Add(movie);
             }
-            
-=======
-            foreach (var movie in db.Movies)
-            {
-                movies.Add(movie);
-            }
->>>>>>> 020da727dbeec005d75cf7b4f9bd6da72bff24bb
+
             return Ok(movies);
         }
 
@@ -39,17 +32,6 @@ namespace WebAPISample.Controllers
             return Ok(movie);
         }
 
-        // POST api/values
-<<<<<<< HEAD
-        public void Post([FromBody]Movie movie) // Create movie in db logic
-        {
-            if (ModelState.IsValid)
-            {
-                db.Movies.Add(movie);
-                db.SaveChanges();
-                Ok();
-            }
-=======
         public IHttpActionResult Post([FromBody]Movie movie) // Create movie in db logic
         {  
             //if (ModelState.IsValid)
@@ -59,7 +41,6 @@ namespace WebAPISample.Controllers
                 
             //}
             return Ok();
->>>>>>> 020da727dbeec005d75cf7b4f9bd6da72bff24bb
         }
 
         // PUT api/values/5
@@ -73,7 +54,6 @@ namespace WebAPISample.Controllers
         // DELETE api/values/5
         public IHttpActionResult Delete(int id) // Delete movie from db logic
         {
-<<<<<<< HEAD
             if (id == 0)
             {
                 return BadRequest("Not a valid id");
@@ -85,28 +65,6 @@ namespace WebAPISample.Controllers
                 db.SaveChanges();
                 return Ok();
             }
-=======
-            {
-                if (id <= 0)
-                    return BadRequest("Not a valid movie id");
-
-                using (var moviedel = new ApplicationDbContext())
-                {
-                    var movie = moviedel.Movies
-                        .Where(s => s.MovieId == id)
-                        .FirstOrDefault();
-
-                    moviedel.Entry(movie).State = System.Data.Entity.EntityState.Deleted;
-                    moviedel.SaveChanges();
-                }
-
-                return Ok();
-            }
-            //Movie movie = db.Movies.Find(id);
-            //db.Movies.Remove(movie);
-            //db.SaveChanges();
-            //return Ok();
->>>>>>> 020da727dbeec005d75cf7b4f9bd6da72bff24bb
         }
     }
 
