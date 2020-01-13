@@ -16,12 +16,18 @@ namespace WebAPISample.Controllers
         public IHttpActionResult Get() // Retrieve all movies from db logic
         {
             List<Movie> movies = new List<Movie>();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e31af10cf1435fe9e5d0c25dc17d942f7c9c4c0
             foreach(var movie in db.Movies)
             {
                 movies.Add(movie);
             }
+<<<<<<< HEAD
             
+=======
+>>>>>>> 0e31af10cf1435fe9e5d0c25dc17d942f7c9c4c0
 
             return Ok(movies);
         }
@@ -34,6 +40,7 @@ namespace WebAPISample.Controllers
             return Ok(movie);
         }
 
+<<<<<<< HEAD
         // POST api/values
         public void Post([FromBody]Movie movie) // Create movie in db logic
         {
@@ -43,6 +50,17 @@ namespace WebAPISample.Controllers
                 db.SaveChanges();
                 Ok();
             }
+=======
+        public IHttpActionResult Post([FromBody]Movie movie) // Create movie in db logic
+        {  
+            //if (ModelState.IsValid)
+            //{
+            //    db.Movies.Add(movie);
+            //    db.SaveChanges();
+                
+            //}
+            return Ok();
+>>>>>>> 0e31af10cf1435fe9e5d0c25dc17d942f7c9c4c0
         }
 
         // PUT api/values/5
@@ -55,6 +73,7 @@ namespace WebAPISample.Controllers
         // DELETE api/values/5
         public IHttpActionResult Delete(int id) // Delete movie from db logic
         {
+<<<<<<< HEAD
                 if (id == 0)
                 {
 
@@ -67,6 +86,19 @@ namespace WebAPISample.Controllers
                     db.SaveChanges();
                     return Ok();
                 }
+=======
+            if (id == 0)
+            {
+                return BadRequest("Not a valid id");
+            }
+            else
+            {
+                var movie = db.Movies.Where(m => m.MovieId == id).FirstOrDefault();
+                db.Movies.Remove(movie);
+                db.SaveChanges();
+                return Ok();
+            }
+>>>>>>> 0e31af10cf1435fe9e5d0c25dc17d942f7c9c4c0
         }
     }
 
