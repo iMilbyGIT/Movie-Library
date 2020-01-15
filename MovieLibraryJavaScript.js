@@ -16,6 +16,7 @@ $(function (){
             "<td>" + movie.Title + "</td>" +
             "<td>" + movie.Genre + "</td>" +
             "<td>" + movie.Director + "</td>" +
+            "<td>"+ "<button>Edit</button>" +"</td>" +
             "</tr>"
         );
     }
