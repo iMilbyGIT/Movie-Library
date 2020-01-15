@@ -6,20 +6,13 @@ $(function (){
     var $Genre = $('#genre');
     var $Director = $('#director');
 
-    // function addMovie(movie) {
-    //     $movies.append('<li>Title: ' + movie.Title +'\n Genre: ' + movie.Genre +'\n Director: ' + movie.Director + '</li>');
-    // }
+    var movieTemplate = $('#movie-template').html();
     
     function addMovie(movie) {
-        $('#movie-table').append(
-            "<tr>" +
-            "<td>" + movie.Title + "</td>" +
-            "<td>" + movie.Genre + "</td>" +
-            "<td>" + movie.Director + "</td>" +
-            "<td>"+ "<button>Edit</button>" +"</td>" +
-            "</tr>"
-        );
+        $('#movie-table').append(Mustache.render(movieTemplate, movie));
     }
+
+
 
     $.ajax({
         url: 'https://localhost:44352/api/movie',
@@ -48,7 +41,7 @@ $(function (){
             type: 'POST',
             data: movie,
             success: function(newMovie) {
-                $movies.append('<li>Title: ' + newMovie.Title +'\n Genre: ' + newMovie.Genre +'\n Director: ' + newMovie.Director + '</li>');
+                addMovie(newMovie)
             },
             error: function() {
                 alert('error saving order');

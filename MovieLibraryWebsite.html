@@ -14,8 +14,9 @@
         <title>Movie Library</title>
         <h1>Movie Library</h1>
 
-        <h2>Your Movies</h2>
-        <div><center>
+        <h2>Your Movies</h2>        
+        <div>
+        <center>
             <table>
                 <thead>
                     <tr>
@@ -29,23 +30,26 @@
             </table>
         </center>
         </div>
-        <br>
-        <br>
+        <template id="movie-template">
+            <tr>
+                <td>{{Title}}</td>
+                <td>{{Genre}}</td>
+                <td>{{Director}}</td>
+            </tr>
+        </template>
         <div>
             <label>
-                Title:<input type="text" id="title">
-                <br>  
+                Title:<input type="text" id="title">  
                 Genre:<input type="text" id="genre">  
-                <br>
                 Director:<input type="text" id="director">
-                <br>
             </label>
             <button id="add-movie">Add</button>
         </div>
         <br>
 
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="MovieLibraryJavaScript.js"></script>        
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+        <script src="MovieLibraryJavaScript.js"></script>
         <script class id="url" src="https://localhost:44352/api/movie"></script>
 
     </body>
