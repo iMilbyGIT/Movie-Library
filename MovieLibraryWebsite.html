@@ -30,18 +30,35 @@
             </table>
         </center>
         </div>
+
         <template id="movie-template">
-            <tr>
-                <td>{{Title}}</td>
-                <td>{{Genre}}</td>
-                <td>{{Director}}</td>
-            </tr>
-        </template>
+                    <tr>
+                        <p>
+                            <strong class= "edit">Title:</strong>
+                            <td class="noedit">{{Title}}</td>
+                            <input class="edit title" />
+                        </p>
+                        <p>
+                            <strong class="edit">Genre:</strong>
+                            <td class="noedit">{{Genre}}</td>
+                            <input class="edit genre" />
+                        </p>
+                        <p>
+                            <strong class= "edit">Director:</strong>
+                            <td class="noedit">{{Director}}</td>
+                            <input class="edit director" />
+                        </p>
+                        <td><button class="editMovie noedit">Edit</button></td>
+                        <td><button class="cancelEdit edit">Cancel</button></td>
+                       <td><button class="saveMovie edit">Save</button></td>
+                    </tr>
+                </template>
         <div>
+            <br>
             <label>
-                Title:<input type="text" id="title">  
-                Genre:<input type="text" id="genre">  
-                Director:<input type="text" id="director">
+                <strong>Title:</strong><input type="text" id="title"><br>  
+                <strong>Genre:</strong><input type="text" id="genre"><br>  
+                <strong>Director:</strong><input type="text" id="director"><br>
             </label>
             <button id="add-movie">Add</button>
         </div>

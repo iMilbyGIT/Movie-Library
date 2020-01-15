@@ -6,7 +6,7 @@
     text-align: center;
 }
 html{
-    cursor: crosshair;
+    cursor: pointer;
 }
 h1{
     position: center;
@@ -36,4 +36,16 @@ h2{
 }
 label{
     text-align: center;
+}
+td tr{
+    list-style-type: none;
+}
+td tr .edit {
+    display: none;
+}
+td tr.edit .edit {
+    display: initial
+}
+td tr.edit .noedit {
+    display: none;
 }

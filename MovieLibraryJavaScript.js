@@ -12,8 +12,6 @@ $(function (){
         $('#movie-table').append(Mustache.render(movieTemplate, movie));
     }
 
-
-
     $.ajax({
         url: 'https://localhost:44352/api/movie',
         dataType: 'json',
