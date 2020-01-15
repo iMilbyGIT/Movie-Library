@@ -16,11 +16,10 @@ namespace WebAPISample.Controllers
         public IHttpActionResult Get() // Retrieve all movies from db logic
         {
             List<Movie> movies = new List<Movie>();
-            foreach(var movie in db.Movies)
+            foreach (var movie in db.Movies)
             {
                 movies.Add(movie);
             }
-
             return Ok(movies);
         }
 
@@ -28,15 +27,13 @@ namespace WebAPISample.Controllers
         public IHttpActionResult Get(int id) // Retrieve movie by id from db logic
         {
             var movie = db.Movies.Find(id);
-
             return Ok(movie);
         }
 
         public void Post([FromBody]Movie movie) // Create movie in db logic
         {
-                db.Movies.Add(movie);
-                db.SaveChanges();
-
+            db.Movies.Add(movie);
+            db.SaveChanges();
         }
 
         // PUT api/values/5
@@ -64,7 +61,8 @@ namespace WebAPISample.Controllers
             {
                 return BadRequest("Not a valid id");
             }
+
         }
     }
-
 }
+
