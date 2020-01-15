@@ -27,7 +27,7 @@ $(function (){
         contentType: 'application/json',
         success: function(movies) {
             $.each(movies, function(i, movie){
-                $movies.append('<li>Title: ' + movie.Title +'\n Genre: ' + movie.Genre +'\n Director: ' + movie.Director + '</li>');
+                addMovie(movie);
             });
         },
         error: function(){

@@ -16,7 +16,22 @@
         <h1>Movie Library</h1>
 
         <h2>Your Movies</h2>
-        <ul id="movie-list"></ul>
+        <div><center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Director</th>
+                    </tr>
+                </thead>
+                <tbody id="movie-table">
+                </tbody>
+            </table>
+        </center>
+        </div>
+        <br>
+        <br>
         <div>
             <label>
                 Title:<input type="text" id="Title">  
@@ -26,19 +41,6 @@
             <button onclick="">Create</button>
         </div>
         <br>
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Genre</th>
-                        <th>Director</th>
-                    </tr>
-                </thead>
-                <tbody id="movie-list">
-                </tbody>
-            </table>
-        </div>
 
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="MovieLibraryJavaScript.js"></script>        
