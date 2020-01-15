@@ -4,14 +4,19 @@
         <title>Movie Library</title>
 
         <!--My Style Sheet-->
-        <link rel='styles' type='text/css' href='styles.css' />
+        <link href='styles.css' rel='stylessheet' type='text/css' />
     </head>
     <body>
         <h1>Movie Library</h1>
 
         <h2>Your Movies</h2>
         <ul id="movie-list"></ul>
-
+        
+        <h4>Add A Movie To Your Library</h4>
+        <p>Title: <input type="text" id="title"></p>
+        <p>Genre: <input type="text" id="genre"></p>
+        <p>Director: <input type="text" id="director"></p>
+        <button id="add-movie">Add</button>
 
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="MovieLibraryJavaScript.js"></script>        
