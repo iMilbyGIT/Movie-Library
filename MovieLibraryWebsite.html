@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+		<meta name="description" content="Learning objective: Build a REST web API in ASP.NET and connect a jQuery frontend to it">
+		<meta name="author" content="Adam & Elias">
         <title>Movie Library</title>
 
         <!--My Style Sheet-->
-        <link rel='styles' type='text/css' href='styles.css' />
+        <link href='styles.css' rel='stylesheet' type='text/css' />
     </head>
     <body>
+        <br>
+        <br>
+        <title>Movie Library</title>
         <h1>Movie Library</h1>
 
         <h2>Your Movies</h2>
         <ul id="movie-list"></ul>
-
+        <div>
+            <label>
+                Title:<input type="text" id="Title">  
+                Genre:<input type="text" id="Genre">  
+                Director:<input type="text" id="Director">
+            </label>
+            <button onclick="">Create</button>
+        </div>
+        <br>
+        <div class="movie-list">
+            <table>
+                <thread>
+                    <tr>
+                        
+                    </tr>
+                </thread>
+            </table>
+        </div>
 
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="MovieLibraryJavaScript.js"></script>        
