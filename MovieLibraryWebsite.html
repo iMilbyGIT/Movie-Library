@@ -7,7 +7,7 @@
         <title>Movie Library</title>
 
         <!--My Style Sheet-->
-        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <link href="styles.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
         <br>
@@ -15,29 +15,42 @@
         <title>Movie Library</title>
         <h1>Movie Library</h1>
 
-        <h2>Your Movies</h2>
-        <ul id="movie-list"></ul>
+        <h2>Your Movies</h2>        
         <div>
-            <label>
-                Title:<input type="text" id="Title">  
-                Genre:<input type="text" id="Genre">  
-                Director:<input type="text" id="Director">
-            </label>
-            <button onclick="">Add</button>
-        </div>
-        <br>
-        <div class="movie-list">
+        <center>
             <table>
                 <thead>
                     <tr>
-                        
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Director</th>
                     </tr>
                 </thead>
+                <tbody id="movie-table">
+                </tbody>
             </table>
+        </center>
         </div>
+        <template id="movie-template">
+            <tr>
+                <td>{{Title}}</td>
+                <td>{{Genre}}</td>
+                <td>{{Director}}</td>
+            </tr>
+        </template>
+        <div>
+            <label>
+                Title:<input type="text" id="title">  
+                Genre:<input type="text" id="genre">  
+                Director:<input type="text" id="director">
+            </label>
+            <button id="add-movie">Add</button>
+        </div>
+        <br>
 
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="MovieLibraryJavaScript.js"></script>        
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+        <script src="MovieLibraryJavaScript.js"></script>
         <script class id="url" src="https://localhost:44352/api/movie"></script>
 
     </body>
