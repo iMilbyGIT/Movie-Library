@@ -37,3 +37,12 @@ h2{
 label{
     text-align: center;
 }
+tr td .edit {
+    display: none;
+}
+tr td.edit .edit{
+    display: initial;
+}
+tr td.edit .noedit{
+    display: none;
+}
