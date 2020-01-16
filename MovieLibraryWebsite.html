@@ -32,20 +32,20 @@
         </div>
 
         <template id="movie-template">
-                    <tr>
+                    <tr data-id="{{MovieId}}">
                         <p>
-                            <strong class= "edit">Title:</strong>
-                            <td class="noedit">{{Title}}</td>
+                            <!-- <strong class= "edit">Title:</strong> -->
+                            <td class="noedit title">{{Title}}</td>
                             <input class="edit title" />
                         </p>
                         <p>
-                            <strong class="edit">Genre:</strong>
-                            <td class="noedit">{{Genre}}</td>
+                            <!-- <strong class="edit">Genre:</strong> -->
+                            <td class="noedit genre">{{Genre}}</td>
                             <input class="edit genre" />
                         </p>
                         <p>
-                            <strong class= "edit">Director:</strong>
-                            <td class="noedit">{{Director}}</td>
+                            <!-- <strong class= "edit">Director:</strong> -->
+                            <td class="noedit director">{{Director}}</td>
                             <input class="edit director" />
                         </p>
                         <td><button class="editMovie noedit">Edit</button></td>

@@ -33,7 +33,7 @@ namespace WebAPISample.Controllers
         public void Post([FromBody]Movie movie) // Create movie in db logic
         {
             db.Movies.Add(movie);
-            db.SaveChanges();
+            db.SaveChangesAsync();
         }
 
         // PUT api/values/5
@@ -43,7 +43,7 @@ namespace WebAPISample.Controllers
             updatedMovie.Title = movie.Title;
             updatedMovie.Genre = movie.Genre;
             updatedMovie.Director = movie.Director;
-            db.SaveChanges();
+            db.SaveChangesAsync();
             return Ok();
         }
 
@@ -54,7 +54,7 @@ namespace WebAPISample.Controllers
             {
                 var movie = db.Movies.Where(m => m.MovieId == id).FirstOrDefault();
                 db.Movies.Remove(movie);
-                db.SaveChanges();
+                db.SaveChangesAsync();
                 return Ok();
             }
             catch

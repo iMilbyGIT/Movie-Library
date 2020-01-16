@@ -37,15 +37,15 @@ h2{
 label{
     text-align: center;
 }
-td tr{
+tr td{
     list-style-type: none;
 }
-td tr .edit {
+tr td .edit {
     display: none;
 }
-td tr.edit .edit {
+tr td.edit .edit {
     display: initial
 }
-td tr.edit .noedit {
+tr td.edit .noedit {
     display: none;
 }
